@@ -1,4 +1,4 @@
-const int NUMBER_OF_PARTICLES = 150;
+const int NUMBER_OF_PARTICLES = 2000;
 const float MAX_ROTATION = 360;
 const float MIN_ROTATION = 0;
 const float MIN_TRANS = .005;
@@ -12,3 +12,4 @@ const int MAX_LIFETIME = 50;
 const int DELTA_LIFETIME = 1;
 
 bool EXPAND_FLAG = true;
+bool GROW_FIRST = true;

@@ -24,7 +24,7 @@ int main(int argc, char** argv){
 	glutKeyboardFunc(KeyboardPress);
 	glutSpecialFunc(NonASCIIKeyboardPress);
 	glutDisplayFunc(display);
-	glutTimerFunc(20, timer, 1);
+	glutTimerFunc(33, timer, 1);
 	glViewport(0, 0, curr_window_size[0], curr_window_size[1]);
 
 	glShadeModel(GL_SMOOTH);

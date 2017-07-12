@@ -23,6 +23,6 @@ public:
 private:
 	Particle particles[NUMBER_OF_PARTICLES];
 	int current_particle;
-	int generateRandomNumber(float lower, float upper);
+	float generateRandomNumber(float lower, float upper);
 	Particle generateNewParticle(bool first_sphere);
 };

@@ -186,7 +186,7 @@ void NonASCIIKeyboardPress(int pressedKey, int mouseXPosition, int mouseYPositio
 void timer(int value){
 
 	glutPostRedisplay();
-	glutTimerFunc(20, timer, 1);
+	glutTimerFunc(33, timer, 1);
 }
 
 void drawSphere(GLfloat x_position){
@@ -216,7 +216,7 @@ void drawParticle(Particle currParticle, GLuint texture_name)
       glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
       glRotatef(currParticle.azimuth_rotation , 0, 1, 0);
       glRotatef( currParticle.zenith_rotation ,0,0,1);
-      glTranslatef(SPHERE_RADIUS + currParticle.surface_translation_factor, 0, 0);
+      glTranslatef(currParticle.surface_translation_factor, 0, 0);
       glRotatef(90, 0 , 1, 0);
       glScalef( .25, .25, 1.0 );
       glBindTexture(GL_TEXTURE_2D, texture_name);
@@ -247,7 +247,6 @@ void drawParticle(Particle currParticle, GLuint texture_name)
 }
 
 void drawAllParticles(GLfloat center, ParticleSystem &particles, GLuint texture_name){
- 	glRotatef( -90.0, 0.0, 1.0, 0.0 );
  	particles.updateAll();
  	for(int i = 0; i < particles.getNumberOfParticles(); i++)
     	drawParticle(particles.getNextParticle(), texture_name);
@@ -284,7 +283,7 @@ void display()
 				0.0, 1.0, 0.020);
 
 	UpdateLight();
-	drawSphere(0.0);
+	//drawSphere(0.0);
 	//drawSphere(3.0);
 
 	glEnable(GL_BLEND);
